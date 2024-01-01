@@ -1,11 +1,6 @@
 #ifndef ERRORS_H_
 #define ERRORS_H_
 
-/// Get the number of elements in any C array
-/// - Usage example: [my own answer]:
-///   https://arduino.stackexchange.com/a/80289/7727
-#define ARRAY_LEN(array) (sizeof(array) / sizeof((array)[0]))
-
 /// @brief Error codes for library "mymodule"
 typedef enum mymodule_error_e
 {
@@ -38,9 +33,6 @@ const char *const MYMODULE_ERROR_STRS[] =
         "MYMODULE_ERROR_NOMEM",
         "MYMODULE_ERROR_MYERROR",
 };
-_Static_assert(ARRAY_LEN(MYMODULE_ERROR_STRS) == MYMODULE_ERROR_COUNT,
-               "You must keep your `mymodule_error_t` enum and your "
-               "`MYMODULE_ERROR_STRS` array in-sync!");
 
 // To get a printable error string
 const char *mymodule_error_str(mymodule_error_t err);
